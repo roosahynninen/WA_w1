@@ -122,10 +122,10 @@ function checkWin(table) {
         dia2 === 5
       ) {
         if (mark[i] === "X") {
-          alert("Player 1 won the game!");
+          alert("Player 1 won");
         }
         if (mark[i] === "O") {
-          alert("Player 2 won the game!");
+          alert("Player 2 won!");
         }
         clearTable(table);
       }
