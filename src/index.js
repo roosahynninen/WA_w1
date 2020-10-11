@@ -13,8 +13,8 @@ function createTable() {
     var table_row = table.insertRow();
     for (var c = 0; c < 5; c++) {
       var table_cell = table_row.insertCell();
-      var cellText = document.createTextNode("");
-      table_cell.appendChild(cellText);
+      var cell_text = document.createTextNode("");
+      table_cell.appendChild(cell_text);
     }
   }
   board.appendChild(table);
@@ -35,16 +35,16 @@ function fillCell(table, table_cell) {
   count++;
   if (count % 2 === 0) {
     if (table_cell.innerHTML === "") {
-      table_cell.innerHTML = "O";
+      table_cell.innerHTML = "o";
     } else {
-      alert("That cell is already taken");
+      alert("This cell is already taken");
       count--;
     }
   } else {
     if (table_cell.innerHTML === "") {
-      table_cell.innerHTML = "X";
+      table_cell.innerHTML = "x";
     } else {
-      alert("That cell is already taken");
+      alert("This cell is already taken");
       count--;
     }
   }
@@ -53,7 +53,7 @@ function fillCell(table, table_cell) {
 }
 
 function checkWin(table) {
-  var mark = ["X", "O"];
+  var mark = ["x", "o"];
 
   for (var i = 0; i < 2; i++) {
     var lin1 = 0;
@@ -121,10 +121,10 @@ function checkWin(table) {
         dia1 === 5 ||
         dia2 === 5
       ) {
-        if (mark[i] === "X") {
+        if (mark[i] === "x") {
           alert("Player 1 won");
         }
-        if (mark[i] === "O") {
+        if (mark[i] === "o") {
           alert("Player 2 won!");
         }
         clearTable(table);
@@ -139,8 +139,8 @@ function checkDraw(table) {
   for (var tab = 0; tab < table.rows.length; tab++) {
     for (var i = 0; i < table.rows[tab].cells.length; i++) {
       if (
-        table.rows[tab].cells[i].innerHTML === "X" ||
-        table.rows[tab].cells[i].innerHTML === "O"
+        table.rows[tab].cells[i].innerHTML === "x" ||
+        table.rows[tab].cells[i].innerHTML === "o"
       ) {
         draw_count++;
       }
